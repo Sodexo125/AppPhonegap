@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data:" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Proyecto Phonegap 2</title>
+
+    <link rel="stylesheet" href="js/libs/jquery-mobile/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="js/themes/mitema.min.css">
+
+    <style>
+    
+    </style>
+</head>
+
+
+<body>
+
+        <!--#1 PAGINA LOGIN -->
+    <div data-role="page" id="paginalLogin">
+        <div data-role="header" class="ui-shadow">
+            <h1>Login de usuario</h1>
+        </div>
+
+        <div data-role="main" class="ui-content" >
+            <form action="" id="formularioLogin">
+                <label>Teléfono</label>
+                <input type="number" id="telefonoLogin">
+                <label>Password</label>
+                <input type="password" id="passLogin">
+                <input type="submit" value="Login" id="botonLogin" disabled="">
+            </form>
+        </div>
+    </div>
+    <!-- FIN DE LA PAGINA LOGIN -->
+
+
+     
+    <!--#2 MENU INICIAL -->
+    <div data-role="page" id="menuInicial">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="Atras">
+            <h1>Bienvenido</h1>
+        </div>
+
+        <div data-role="main" class="ui-content ">
+            <a href="#paginaPerfil" class="ui-btn" data-transition="pop">Ir a mi perfil</a>
+            <a href="#paginaContactos" class="ui-btn" data-transition="pop">Contactos</a>
+            <a href="#informacionDispositivo" class="ui-btn" data-transition="slider">Información Dispositivo</a>
+            <a href="#notificacionLocal" class="ui-btn" data-transition="pop">Notificaciones Local</a>
+
+            
+        </div>
+    </div>
+    <!-- FIN DE MENU INICIAL -->
+
+
+
+    <!--#3 PAGINAPERFIL -->
+    <div data-role="page" id="paginaPerfil">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="Atras">
+            <h1>Mi Perfil</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <img src="img/logo.png" alt="image" style="width: 50%;" id="foto">
+            <button class="ui-btn ui-btn ui-icon-camera ui-btn-icon-right" id="imageCamara">Foto desde Cámara</button>
+            <button class="ui-btn ui-btn ui-icon-action ui-btn-icon-right" id="imagenBibliotecaFoto">Imagen desde Biblioteca</button>
+            <button class="ui-btn ui-btn ui-icon-audio ui-btn-icon-right" id="audioFav">Audio Favorito</button>
+        
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="user" class="ui-btn-active">Sobre Mi</a></li>
+                    <li><a href="#" data-icon="home">Ubicacion</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--FIN  PAGINAPERFIL -->
+
+
+
+    <!-- CONTACTS -->
+    <div data-role="page" id="paginaContactos">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="Atras">
+            <h1>Lista de Contactos</h1>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <button class="ui-btn" id="consultarContactos">Consultar Contactos</button>
+
+            <div class="ui-content">
+                <ul data-role="Listview" id="listaContactos" data-filter="true">
+                        <!--Elementos contactos -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--END CONTACTS -->
+
+
+    
+
+    <!-- INFO DISPOSITIVO Y  BATERIA -->
+    <div data-role="page" id="informacionDispositivo">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="Atras">
+            <h1>Información Dispositivo</h1>
+        </div>
+        
+        <div data-role="main" class="ui-content ">
+            
+            <div class="ui-content ui-body-a and ui-corner-all">
+                <h5>Datos del Dispositivo</h5>
+                <div id="infoDispositivo"></div>
+            </div>
+            <br />
+            
+            <div class="ui-content ui-body-a and ui-corner-all">
+                <h5>Estado de Batería</h5>
+                <div id="infoBateria"></div>
+            </div>
+            <br />
+           
+            <div class="ui-content ui-body-a and ui-corner-all">
+                <h5>Info Red</h5>
+                <div id="infoRed"></div>
+            </div>
+            <br />
+
+            <div class="ui-content ui-body-a and ui-corner-all">
+                <h5>Info Acelerómetro</h5>
+                <div id="infoAccel"></div>
+            </div>
+            <br />
+
+        </div>
+        
+    </div>
+    <!--END INFO DISPOSITIVO Y  BATERIA  -->
+    
+
+    <!-- NOTIFICAIONES -->
+    <div data-role="page" id="notificacionLocal">
+        <div data-role="header" data-add-back-btn="true" data-back-btn-text="Atras">
+            <h1>Notificacion Local</h1>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <h2>Verificar permisos iOS8</h2>
+            <button class="ui-btn" id="Verificar Permisos">Consultar Contactos</button>
+
+        </div>
+    </div>
+    <!--END NOTIFICAIONES -->
+    
+
+
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/libs/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <!-- <script type="text/javascript">
+        app.initialize();
+    </script> -->
+
+    <script src="js/libs/devReadyConsola.js"></script>
+    <script src="js/libs/Dialogos.js"></script>
+    <script src="js/libs/Camara.js"></script>
+    <script src="js/libs/FotoBiblioteca.js"></script>
+    <script src="js/libs/Audio.js"></script>
+    <script src="js/libs/Contactos.js"></script>
+    <script src="js/libs/informacionDispositivo.js"></script>
+    <script src="js/libs/informacionBateria.js"></script>
+    <script src="js/libs/informacionAcelerometro.js"></script>
+    <script src="js/libs/InformacionRed.js"></script>
+  
+</body>
+
+<!--  
+    <div data-role="page" id="contactos">
+            <div data-role="header" data-add-back-btn="true" data-back-btn-text="Atras">
+                <h1></h1>
+            </div>
+    
+            <div data-role="main" class="ui-content">
+
+            </div>
+    </div>
+ -->
+</html>
